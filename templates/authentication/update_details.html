@@ -1,0 +1,24 @@
+{% extends 'authentication/base.html' %}
+
+{% block title %}Update Details{% endblock title %}
+
+{% block body %}
+<form action="{% url 'authentication:update_details' %}" method="post">
+    {% csrf_token %}
+
+    <label for="username">Username: 
+        <input type="text" name="new_username" required value={{username}}>
+    </label>
+
+    <label for="username">Last Name: 
+        <input type="text" name="new_first_name" required value={{first_name}}>
+    </label>
+
+    <label for="username">First Name: 
+        <input type="text" name="new_last_name" required value={{last_name}}>
+    </label>
+
+    <input type="submit" value="Update Details">
+</form>
+
+{% endblock body %}

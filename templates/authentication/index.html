@@ -1,0 +1,13 @@
+{% extends 'authentication/base.html' %}
+
+{% block title %}Index Page{% endblock title %}
+
+{% block body %}
+
+{% if logged_in %}
+    <h3>Welcome {{user}}</h3>
+{% else %}
+    <h3>You are not logged in!</h3>
+{% endif %}
+
+{% endblock body %}

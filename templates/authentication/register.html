@@ -1,0 +1,34 @@
+{% extends 'authentication/base.html' %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+<form action="{% url 'authentication:register' %}" method="post">
+    {% csrf_token %}
+
+    <label for="username">Username: 
+        <input type="text" name="username" required>
+    </label>
+
+    <label for="password1">Password: 
+        <input type="password" name="password1" required>
+    </label>
+
+    <label for="password2">Confirm password: 
+        <input type="password" name="password2" required>
+    </label>
+
+
+    <label for="plan">Select Plan: 
+        <select name="plan">
+            <option value="">(None)</option>
+            <option value="Free">Free</option>
+            <option value="Advanced">Advanced</option>
+            <option value="Pro">Pro</option>
+            <option value="Premium">Premium</option>
+        </select>
+    </label>
+    <input type="submit" value="Register">
+</form>
+
+{% endblock body %}

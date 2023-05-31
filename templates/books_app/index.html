@@ -1,0 +1,16 @@
+{% extends 'books_app/base.html' %}
+
+{% block title %}Index Page{% endblock title %}
+
+{% block body %}
+
+    <p>Here are the books you have access to:
+        <ul>
+            {% for book in books %}
+            <li>
+                <a href="{% url 'books_app:read_book' book.pk %}">{{book}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </p>
+{% endblock body %}
